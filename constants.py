@@ -8,12 +8,42 @@ SPATK = "Sp.Attack"
 SPDEF = "Sp.Defense"
 SPEED = "Speed"
 
-PHYSICAL = "physical"
-SPECIAL = "special"
-
 #Command
 DO_ATTACK = "attack"
 DO_ATTACK_SELECTION = "selected_attack"
+
+#Attack Categories
+PHYSICAL = "physical"
+SPECIAL = "special"
+
+NATURES = [
+    "Hardy",
+    "Lonely",
+    "Brave",
+    "Adamant",
+    "Naughty",
+    "Bold",
+    "Docile",
+    "Relaxed",
+    "Impish",
+    "Lax",
+    "Timid",
+    "Hasty",
+    "Serious",
+    "Jolly",
+    "Naive",
+    "Modest",
+    "Mild",
+    "Quiet",
+    "Bashful",
+    "Rash",
+    "Calm",
+    "Gentle",
+    "Sassy",
+    "Careful",
+    "Quirky"
+]
+
 NATURE_MATRIX = [
     {HP: 1, ATTACK: 1, DEFENSE: 1, SPATK: 1, SPDEF: 1, SPEED: 1},         # Hardy
     {HP: 1, ATTACK: 1.1, DEFENSE: 0.9, SPATK: 1, SPDEF: 1, SPEED: 1},     # Lonely
@@ -42,3 +72,44 @@ NATURE_MATRIX = [
     {HP: 1, ATTACK: 1, DEFENSE: 1, SPATK: 1, SPDEF: 1, SPEED: 1}          # Quirky
 ]
 
+TYPES = [
+    "Normal",
+    "Fighting",
+    "Flying",
+    "Poison",
+    "Ground",
+    "Rock",
+    "Bug",
+    "Ghost",
+    "Steel",
+    "Fire",
+    "Water",
+    "Grass",
+    "Electric",
+    "Psychic",
+    "Ice",
+    "Dragon",
+    "Dark",
+    "Fairy"
+    ]
+
+TYPE_CHART = [
+    [1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,1,2,1,1,.5,.5,1,1,1,1,1,1,2,1,1,.5,2],
+    [1,.5,1,1,0,2,.5,1,1,1,1,.5,2,1,2,1,1,1],
+    [1,.5,1,.5,2,1,.5,1,1,1,1,.5,1,2,1,1,1,.5],
+    [1,1,1,.5,1,.5,1,1,1,1,2,2,0,1,2,1,1,1],
+    [.5,2,.5,.5,2,1,1,1,2,.5,2,2,1,1,1,1,1,1],
+    [1,.5,2,1,.5,2,1,1,1,2,1,.5,1,1,1,1,1,1],
+    [0,0,1,.5,1,1,.5,2,1,1,1,1,1,1,1,1,2,1],
+    [.5,2,.5,0,2,.5,.5,1,.5,2,1,.5,1,.5,.5,.5,1,.5],
+    [1,1,1,1,2,2,.5,1,.5,.5,2,.5,1,1,.5,1,1,.5],
+    [1,1,1,1,1,1,1,1,.5,.5,.5,2,2,1,.5,1,1,1],
+    [1,1,2,2,.5,1,2,1,1,2,.5,.5,.5,1,2,1,1,1],
+    [1,1,.5,1,2,1,1,1,.5,1,1,1,.5,1,1,1,1,1],
+    [1,.5,1,1,1,1,2,2,1,1,1,1,1,.5,1,1,2,1],
+    [1,2,1,1,1,2,1,1,2,2,1,1,1,1,.5,1,1,1],
+    [1,1,1,1,1,1,1,1,1,.5,.5,.5,.5,1,2,2,1,2],
+    [1,2,1,1,1,1,2,.5,1,1,1,1,1,0,1,1,.5,2],
+    [1,.5,1,2,1,1,.5,1,2,1,1,1,1,1,1,0,.5,1]
+    ]

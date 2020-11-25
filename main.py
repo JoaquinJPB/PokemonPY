@@ -4,19 +4,19 @@ from models.Pokemon import *
 from models.Battle import *
 
 #First, define pokemon with his stats
-pokemon1 = Pokemon("Scraggy", 50, "dark","fighting")
-pokemon2 = Pokemon("Tyranitar", 50, "rock", "dark")
-pokemon1.current_hp = 100
-pokemon2.current_hp = 100
+pokemon1 = Pokemon("Scrafty", 50, 1, 16)
+pokemon2 = Pokemon("Tyranitar", 50, 5, 16)
+pokemon1.current_hp = 172
+pokemon2.current_hp = 176
 
 #Stats
 pokemon1.baseStats = {
-    HP : 50,
-    ATTACK : 75,
-    DEFENSE: 70,
-    SPATK: 35,
-    SPDEF: 70,
-    SPEED: 48,
+    HP : 65,
+    ATTACK : 90,
+    DEFENSE: 115,
+    SPATK: 45,
+    SPDEF: 115,
+    SPEED: 58,
 }
 
 pokemon1.ev = {
@@ -36,9 +36,6 @@ pokemon1.iv = {
     SPDEF: 31,
     SPEED: 31
 }
-
-pokemon1.compute_stats()
-print(pokemon1.stats)
 
 pokemon2.baseStats = {
     HP : 100,
@@ -66,13 +63,14 @@ pokemon2.iv = {
     SPDEF: 31,
     SPEED: 31
 }
-
+pokemon1.compute_stats()
 pokemon2.compute_stats()
+print(pokemon1.stats)
 print(pokemon2.stats)
 
 #Attacks
-pokemon1.attacks = [Attack("scratch", "normal", PHYSICAL, 10, 10, 100)]
-pokemon2.attacks = [Attack("scratch", "normal", PHYSICAL, 10, 10, 100)]
+pokemon1.attacks = [Attack("Close Combat", 1, PHYSICAL, 5, 120, 100)]
+pokemon2.attacks = [Attack("Rock Slide", 5, PHYSICAL, 10, 75, 90)]
 
 #Start_battle
 battle = Battle(pokemon1,pokemon2)
