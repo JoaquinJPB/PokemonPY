@@ -1,30 +1,74 @@
 from constants import *
-from models import *
+
+from models.Pokemon import *
+from models.Battle import *
 
 #First, define pokemon with his stats
-pokemon1 = Pokemon("Bulbasaur", 100, "grass","poison")
-pokemon2 = Pokemon("Charmander", 100, "fire", None)
-pokemon1.current_hp = 45
-pokemon2.current_hp = 39
+pokemon1 = Pokemon("Scraggy", 50, "dark","fighting")
+pokemon2 = Pokemon("Tyranitar", 50, "rock", "dark")
+pokemon1.current_hp = 100
+pokemon2.current_hp = 100
 
 #Stats
-pokemon1.stats = {
-    HP : 45,
-    ATTACK : 49,
-    DEFENSE: 49,
-    SPATK: 65,
-    SPDEF: 65,
-    SPEED: 45,
+pokemon1.baseStats = {
+    HP : 50,
+    ATTACK : 75,
+    DEFENSE: 70,
+    SPATK: 35,
+    SPDEF: 70,
+    SPEED: 48,
 }
 
-pokemon2.stats = {
-    HP : 39,
-    ATTACK : 52,
-    DEFENSE: 43,
-    SPATK: 80,
-    SPDEF: 65,
-    SPEED: 65,
+pokemon1.ev = {
+    HP: 252,
+    ATTACK: 252,
+    DEFENSE: 0,
+    SPATK: 0,
+    SPDEF: 0,
+    SPEED: 4
 }
+
+pokemon1.iv = {
+    HP: 31,
+    ATTACK: 31,
+    DEFENSE: 31,
+    SPATK: 31,
+    SPDEF: 31,
+    SPEED: 31
+}
+
+pokemon1.compute_stats()
+print(pokemon1.stats)
+
+pokemon2.baseStats = {
+    HP : 100,
+    ATTACK : 165,
+    DEFENSE: 150,
+    SPATK: 95,
+    SPDEF: 120,
+    SPEED: 71,
+}
+
+pokemon2.ev = {
+    HP: 4,
+    ATTACK: 252,
+    DEFENSE: 0,
+    SPATK: 0,
+    SPDEF: 0,
+    SPEED: 252
+}
+
+pokemon2.iv = {
+    HP: 31,
+    ATTACK: 31,
+    DEFENSE: 31,
+    SPATK: 31,
+    SPDEF: 31,
+    SPEED: 31
+}
+
+pokemon2.compute_stats()
+print(pokemon2.stats)
 
 #Attacks
 pokemon1.attacks = [Attack("scratch", "normal", PHYSICAL, 10, 10, 100)]
