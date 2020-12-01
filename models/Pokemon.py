@@ -1,14 +1,16 @@
 from constants import *
+
+
 class Pokemon:
 
     def __init__(self, name, level, type1, type2):
-        self.name = name
-        self.level = level
-        self.type1 = type1
         self.type2 = type2
-        self.attacks = [] # Vector de ataques
-        self.baseStats = {}
+        self.type1 = type1
+        self.level = level
+        self.name = name
+        self.attacks = []
         self.stats = {}
+        self.baseStats = {}
         self.ev = {}
         self.iv = {}
         self.current_status = 0
@@ -20,8 +22,8 @@ class Pokemon:
             HP: self.compute_hp_stat(),
             ATTACK: self.compute_standard_stat(ATTACK),
             DEFENSE: self.compute_standard_stat(DEFENSE),
-            SPATK: self.compute_standard_stat(SPATK),
-            SPDEF: self.compute_standard_stat(SPDEF),
+            SPATTACK: self.compute_standard_stat(SPATTACK),
+            SPDEFENSE: self.compute_standard_stat(SPDEFENSE),
             SPEED: self.compute_standard_stat(SPEED)
         }
         pass
@@ -35,6 +37,7 @@ class Pokemon:
         value1 = (2 * self.baseStats["HP"] + self.iv["HP"] + int(self.ev["HP"] / 4)) * self.level
         return int(value1 / 100) + self.level + 10
         pass
+
 
 class Attack:
 

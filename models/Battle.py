@@ -1,6 +1,7 @@
 from constants import *
 import random
 
+
 class Battle:
 
     def __init__(self, pokemon1, pokemon2):
@@ -49,7 +50,7 @@ class Battle:
             print("Physical attack!")
             powerFactor *= (pokemon1.stats[ATTACK] / pokemon2.stats[DEFENSE])
         else:
-            powerFactor *= (pokemon1.stats[SPATK] / pokemon2.stats[SPDEF])
+            powerFactor *= (pokemon1.stats[SPATTACK] / pokemon2.stats[SPDEFENSE])
         damage_without_modifier = powerFactor / 50 + 2
         finalDamage = damage_without_modifier * self.compute_damage_modifier(attack, self.pokemon1, self.pokemon2)
         print(finalDamage)
